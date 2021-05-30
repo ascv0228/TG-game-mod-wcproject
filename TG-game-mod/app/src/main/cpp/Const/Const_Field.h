@@ -1,0 +1,110 @@
+#pragma once
+
+#include <string>
+
+namespace Const
+{
+    class Field
+    {
+    public:
+        static std::string totalFloor;
+        static std::string ghosts;
+        static std::string dropId;
+        static std::string TotalDamageAmountToRaidBoss;
+        static std::string timeAttackVal;
+        static std::string generate;
+        static std::string result;
+        static std::string stageTreasures;
+        static std::string randomDropGroupId;
+        static std::string questStringGameVal;
+        static std::string treasureId;
+        static std::string score;
+        static std::string scoreVal1;
+        static std::string paramBoxIds;
+        static std::string titleSkipVersionName;
+        static std::string dropNum;
+        static std::string actionTime;
+        static std::string damage;
+        static std::string m_Account;
+        static std::string paramBoxId;
+        static std::string itemId;
+        static std::string scoreRankList;
+        static std::string cardIds;
+        static std::string passiveItemId;
+        static std::string timeRankList;
+        static std::string spTreasureIds;
+        static std::string itemNum;
+        static std::string timeAttackFlag;
+        static std::string id;
+        static std::string userIdHash;
+        static std::string m_CommonSaveData;
+        static std::string hp;
+        static std::string treasureDatas;
+        static std::string questGameVal;
+        static std::string boxId;
+        static std::string stageDatas;
+        static std::string weaponId;
+        static std::string stageEnemyParams;
+        static std::string conditionType;
+        static std::string spDropId;
+        static std::string apHash;
+        static std::string playingTime;
+        static std::string ornamentIds;
+        static std::string scoreVal2;
+        static std::string questPlayingDatas;
+        static std::string info;
+        static std::string m_CurrentWorld;
+        static std::string read;
+        static std::string totalRestHpOfRaidBoss;
+        static std::string token;
+        static std::string weaponIds;
+        static std::string actionTimer;
+        static std::string stageDropData;
+        static std::string destroyEnemyIds;
+        static std::string stageObjects;
+        static std::string rankingEvent;
+        static std::string crusadePoint;
+        static std::string randomDropAccessoryGroupIds;
+        static std::string itemIds;
+        static std::string dropInfos;
+        static std::string userHash;
+        static std::string userId;
+        static std::string player;
+        static std::string openTreasureIds;
+        static std::string passiveItemIds;
+        static std::string exp;
+        static std::string smonId;
+        static std::string scoreKey1;
+        static std::string players;
+        static std::string crusadeFloor;
+        static std::string cardNum;
+        static std::string crusadeEventId;
+        static std::string totalTakeDamageValue;
+        static std::string paramBoxs;
+        static std::string addScoreValue;
+        static std::string empty;
+        static std::string ornamentId;
+        static std::string gold;
+        static std::string instance;
+        static std::string playingTimer;
+        static std::string totalDamageAmountToRaidBoss;
+        static std::string rank;
+        static std::string raidBoss;
+        static std::string sTimes;
+        static std::string m_contributeLog;
+        static std::string stageClearTimes;
+        static std::string se;
+        static std::string m_Player;
+        static std::string questGameVal2;
+        static std::string cardId;
+        static std::string judgeTime;
+        static std::string destroyObjectIds;
+        static std::string stageEnemies;
+        static std::string MyDamageAmountToRaidBoss;
+        static std::string myDamageAmountToRaidBoss;
+        static std::string mailAddress;
+        static std::string soul;
+        static std::string gmailAddress;
+        static std::string questGameType;
+    };
+}

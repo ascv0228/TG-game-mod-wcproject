@@ -1,0 +1,83 @@
+cmake_minimum_required(VERSION 3.4.1)
+
+set(ORIG_CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+set(ORIG_CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+
+if (EnableSecurity)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS} ${OLLVM_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS} ${OLLVM_FLAGS}")
+    endif()
+    add_subdirectory(Security)
+    set(ExternalLibrary ${ExternalLibrary} Security)
+endif ()
+
+if (EnableDobby)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS}")
+        set(SEND_OLLVM_FLAGS "${SPEC_OLLVM_FLAGS}")
+    endif()
+    add_subdirectory(Dobby)
+    set(ExternalLibrary ${ExternalLibrary} Dobby)
+endif ()
+
+if (EnableWhale)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS} ${SPEC_OLLVM_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS} ${SPEC_OLLVM_FLAGS}")
+    endif()
+    add_subdirectory(Whale)
+    set(ExternalLibrary ${ExternalLibrary} Whale)
+endif ()
+
+if (EnableSandHook)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS} ${SPEC_OLLVM_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS} ${SPEC_OLLVM_FLAGS}")
+    endif()
+    add_subdirectory(SandHook)
+    set(ExternalLibrary ${ExternalLibrary} SandHook)
+endif ()
+
+if (EnableSubstrate)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS} ${OLLVM_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS} ${OLLVM_FLAGS}")
+    endif()
+    set(ZXT_SOURCE
+            ${ZXT_SOURCE}
+            ${CMAKE_CURRENT_SOURCE_DIR}/Substrate/hde64.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/Substrate/SubstrateDebug.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/Substrate/SubstrateHook.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/Substrate/SubstratePosixMemory.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/Substrate/SymbolFinder.cpp)
+endif ()
+
+if (EnableKittyMemory)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS} ${OLLVM_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS} ${OLLVM_FLAGS}")
+    endif()
+    set(ZXT_SOURCE
+            ${ZXT_SOURCE}
+            ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory/KittyMemory.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory/MemoryPatch.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory/MemoryBackup.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory/KittyUtils.cpp)
+endif ()
+
+if (EnableAnd64InlineHook)
+    if (EnableOLLVM)
+        set(CMAKE_C_FLAGS "${ORIG_CMAKE_C_FLAGS} ${OLLVM_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${ORIG_CMAKE_CXX_FLAGS} ${OLLVM_FLAGS}")
+    endif()
+    set(ZXT_SOURCE
+            ${ZXT_SOURCE}
+            ${CMAKE_CURRENT_SOURCE_DIR}/And64InlineHook/And64InlineHook.cpp)
+endif ()
+
+set(CMAKE_C_FLAGS ${ORIG_CMAKE_C_FLAGS})
+set(CMAKE_CXX_FLAGS ${ORIG_CMAKE_CXX_FLAGS})
+set(ExternalLibrary ${ExternalLibrary} PARENT_SCOPE)
+set(ZXT_SOURCE ${ZXT_SOURCE} PARENT_SCOPE)
