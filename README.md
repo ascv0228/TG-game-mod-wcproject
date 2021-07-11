@@ -7,15 +7,15 @@ https://github.com/ascv0228/TG-game-mod-wcproject/tree/main/Something
 
 
 # 工具:
-TG-game-mod編譯工具:
-"Android Studio"
+TG-game-mod編譯工具:  
+"Android Studio"  
 
-apk打包工具:
-"Apk Easy Tool"
+apk打包工具:  
+"Apk Easy Tool"  
 
-apk_signature解析工具:
-https://github.com/L-JINBIN/ApkSignatureKiller/blob/master/src/cc/binmt/signature/NKillSignatureTool.java
+apk_signature解析工具:  
+https://github.com/L-JINBIN/ApkSignatureKiller/blob/master/src/cc/binmt/signature/NKillSignatureTool.java  
 
-apk解析工具:
-"dnspy" (https://github.com/dnSpy/dnSpy/releases)
-"Il2CppDumper" (https://github.com/Perfare/Il2CppDumper/releases)
+apk解析工具:  
+"dnspy" (https://github.com/dnSpy/dnSpy/releases)  
+"Il2CppDumper" (https://github.com/Perfare/Il2CppDumper/releases)  
