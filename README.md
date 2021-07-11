@@ -6,7 +6,7 @@ https://github.com/ascv0228/TG-game-mod-wcproject/tree/main/Something
 ### 包含 apk 和 AndroidManifest.xml
 
 
-
+# 工具:
 TG-game-mod編譯工具:
 "Android Studio"
 
